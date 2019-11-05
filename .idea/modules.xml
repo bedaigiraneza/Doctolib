@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$USER_HOME$/S7_IDU/Full_Stack/Doctolib/.idea/Doctolib.iml" filepath="$USER_HOME$/S7_IDU/Full_Stack/Doctolib/.idea/Doctolib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../.idea/S7_IDU.iml" filepath="$PROJECT_DIR$/../../.idea/S7_IDU.iml" />
+    </modules>
+  </component>
+</project>
