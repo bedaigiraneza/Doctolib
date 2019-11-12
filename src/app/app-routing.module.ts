@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+firebase
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '', redirectTo: 'patient', pathMatch: 'full' },
   { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
   { path: 'pages', loadChildren: './pages/pages.module#PagesPageModule' },
