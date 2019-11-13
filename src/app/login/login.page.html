@@ -6,9 +6,8 @@
 
 <ion-content class="ion-padding">
   <div *ngIf="!connected">
-    <!-- À afficher si l'utilisateur n'est pas connecté -->
-
-    <ion-item>
+  <!-- À afficher si l'utilisateur n'est pas connecté -->
+  <ion-item>
     <ion-label><b>Email:</b></ion-label>
     <ion-input type="email" [(ngModel)]="dataUser.email"></ion-input>
   </ion-item>
@@ -16,21 +15,12 @@
     <ion-label><b>Mot de passe:</b></ion-label>
     <ion-input type="password" [(ngModel)]="dataUser.password"></ion-input>
   </ion-item>
-    <br>
-
-    <ion-button expand="block" color="primary" (click)="login()">Connexion</ion-button>
-
-    <br>
-
+    <ion-button href="patient" expand="block" color="primary" (click)="signUp()">Connexion</ion-button>
     <ion-button expand="block" color="tertiary" (click)="signUp()"  >Inscription</ion-button>
-
   </div>
-
   <div *ngIf="connected">
-    <!-- Si l'utilisateur est connecté -->
-<H1>Vous etes bien connecté</H1>
-    <ion-button expand="block" color="danger" (click)="logout()">Déconnexion</ion-button>
+  <!-- Si l'utilisateur est connecté -->
+  <H1>Vous etes bien connecté</H1>
+  <ion-button expand="block" color="danger" (click)="logout()">Déconnexion</ion-button>
   </div>
-
-
 </ion-content>

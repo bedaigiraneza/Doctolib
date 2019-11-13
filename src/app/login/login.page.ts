@@ -11,7 +11,7 @@ export class LoginPage  {
     email: '',
     password: ''
   };
-  connected:boolean;
+  connected: boolean;
   constructor(
       public  afAuth: AngularFireAuth
   ){

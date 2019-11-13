@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$USER_HOME$/S7_IDU/Full_Stack/Doctolib/.idea/Doctolib.iml" filepath="$USER_HOME$/S7_IDU/Full_Stack/Doctolib/.idea/Doctolib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../Doctolib-new/.idea/Doctolib-new.iml" filepath="$PROJECT_DIR$/../../../Doctolib-new/.idea/Doctolib-new.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../.idea/S7_IDU.iml" filepath="$PROJECT_DIR$/../../.idea/S7_IDU.iml" />
     </modules>
   </component>

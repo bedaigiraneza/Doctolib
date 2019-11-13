@@ -15,14 +15,14 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 
 export const firebaseConfig = {
-    apiKey: "AIzaSyBTnMteLd0stYCnmRRSd2EP3YJYRa4BKSk",
-    authDomain: "doctolib-4279c.firebaseapp.com",
-    databaseURL: 'https://doctolib-4279c.firebaseio.com',
-    projectId: "doctolib-4279c",
-    storageBucket: "doctolib-4279c.appspot.com",
-    messagingSenderId: "466371027168",
-    appId: "1:466371027168:web:4106d92d68b587e8d3f085",
-    measurementId: "G-SSB9N506CG"
+    apiKey: 'AIzaSyDIyvOfPCt_XCNqlZrrJM2f0RxHGZ_rayQ',
+    authDomain: 'doctolib-c8069.firebaseapp.com',
+    databaseURL: 'https://doctolib-c8069.firebaseio.com',
+    projectId: 'doctolib-c8069',
+    storageBucket: 'doctolib-c8069.appspot.com',
+    messagingSenderId: '679509680426',
+    appId: '1:679509680426:web:980d7d83b53af4e64f7e53',
+    measurementId: 'G-ZZ07T44ZDX'
 };
 @NgModule({
   declarations: [AppComponent],

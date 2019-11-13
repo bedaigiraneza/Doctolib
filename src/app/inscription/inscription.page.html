@@ -8,7 +8,7 @@
   <form [formGroup]="inscriptionForm">
     <ion-item>
         <ion-label>Nom:</ion-label>
-        <ion-input formControlName="nom" type="text" placeholder="votre nom..."></ion-input>
+        <ion-input formControlName="nom" type="text" [(ngModel)]="nom" placeholder="votre nom..."></ion-input>
     </ion-item>
 
         <div class="error-messages">
@@ -22,7 +22,7 @@
 
     <ion-item>
         <ion-label>Prénom:</ion-label>
-        <ion-input formControlName="prenom" type="text" placeholder="votre prénom..."></ion-input>
+        <ion-input formControlName="prenom" type="text" [(ngModel)]="prenom" placeholder="votre prénom..."></ion-input>
     </ion-item>
 
         <div class="error-messages">
@@ -35,7 +35,7 @@
           <!---------------------------------------------------------------------------------------------------------------->
     <ion-item>
       <ion-label>Email:</ion-label>
-      <ion-input formControlName="email" type="text" placeholder="votre mail..."></ion-input>
+      <ion-input formControlName="email" type="text" [(ngModel)]="email" placeholder="votre mail..."></ion-input>
     </ion-item>
 
         <div class="error-messages">
@@ -63,7 +63,7 @@
 
     <ion-item>
       <ion-label>Mot de passe:</ion-label>
-      <ion-input formControlName="password" type="password" placeholder="Mot de passe..."></ion-input>
+      <ion-input formControlName="password" type="password" [(ngModel)]="password" placeholder="Mot de passe..."></ion-input>
     </ion-item>
 
         <div class="error-messages">
@@ -86,17 +86,18 @@
                   </div>
                 </ng-container>
               </div>
-          -->
-  <ion-item>
-      <ion-label position="stacked">Adresse</ion-label>
-      <ion-input placeholder="Adresse ligne 1"></ion-input>
-      <ion-input placeholder="Adresse ligne 2"></ion-input>
-      <ion-input placeholder="Ville"></ion-input>
-      <ion-input placeholder="Région"></ion-input>
-      <ion-input type="number" placeholder="Code postale"></ion-input>
-  </ion-item>
 
-          <ion-button (click)="inscription()" [disabled]="!inscriptionForm.valid" shape="round" size="defaut" color="primary" expand="block"> Créer un compte</ion-button>
+
+      <ion-item>
+          <ion-label>Adresse</ion-label>
+          <ion-input formControlName="" type= "text" [(ngModel)]="adresse1" placeholder="Adresse ligne 1"></ion-input>
+          <ion-input formControlName="" type= "text" [(ngModel)]="adresse2" placeholder="Adresse ligne 2"></ion-input>
+          <ion-input formControlName="" type= "text" [(ngModel)]="ville" placeholder="Ville"></ion-input>
+          <ion-input formControlName="" type= "text" [(ngModel)]="region" placeholder="Région"></ion-input>
+          <ion-input formControlName="" type= "number" [(ngModel)]="codePostale" type="number" placeholder="Code postale"></ion-input>
+      </ion-item>
+      -->
+          <ion-button (click)="add()" [disabled]="!inscriptionForm.valid" shape="round" size="defaut" color="primary" expand="block"> Créer un compte</ion-button>
           <ion-button  shape="round" size="defaut" color="danger" expand="block"> Annuler</ion-button>
   </form>
 </ion-content>
