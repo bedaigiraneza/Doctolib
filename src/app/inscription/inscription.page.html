@@ -10,7 +10,6 @@
             <ion-label>Nom:</ion-label>
             <ion-input formControlName="nom" type="text" [(ngModel)]="nom" placeholder="votre nom..."></ion-input>
         </ion-item>
-
             <div class="error-messages">
               <ng-container *ngFor="let error of errorMessages.nom">
                 <div class="error-message" *ngIf="inscriptionForm.get('nom').hasError(error.type) && (inscriptionForm.get('nom').dirty || inscriptionForm.get('nom').touched)">
@@ -35,18 +34,14 @@
               <!---------------------------------------------------------------------------------------------------------------->
         <ion-item>
           <ion-label>adresse:</ion-label>
-          <ion-input formControlName="adresse" type="mail" [(ngModel)]="adresse" placeholder="votre adresse..."></ion-input>
+          <ion-input formControlName="adresse" type="text" [(ngModel)]="adresse" placeholder="votre adresse..."></ion-input>
         </ion-item>
 
-            <div class="error-messages">
-              <ng-container *ngFor="let error of errorMessages.adresse">
-                <div class="error-message" *ngIf="inscriptionForm.get('adresse').hasError(error.type) && (inscriptionForm.get('adresse').dirty || inscriptionForm.get('adresse').touched)">
-                  {{ error.message }}
-                </div>
-              </ng-container>
-            </div>
-              <!---------------------------------------------------------------------------------------------------------------->
-
+          <!---------------------------------------------------------------------------------------------------------------->
+    <ion-item>
+      <ion-label>Email:</ion-label>
+      <ion-input formControlName="email" type="text" [(ngModel)]="email" placeholder="votre mail..."></ion-input>
+    </ion-item>
 
         <ion-item>
           <ion-label>Ville:</ion-label>
@@ -66,4 +61,3 @@
               <ion-button (click)="add()" [disabled]="!inscriptionForm.valid" shape="round" size="defaut" color="primary" expand="block" href="patient"> Enregistrer</ion-button>
               <ion-button  href="login" shape="round" size="defaut" color="danger" expand="block"> Annuler</ion-button>
       </form>
-</ion-content>

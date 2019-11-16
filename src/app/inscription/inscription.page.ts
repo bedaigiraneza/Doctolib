@@ -3,7 +3,8 @@ import {AngularFireDatabase, AngularFireDatabaseModule} from '@angular/fire/data
 import {AngularFireAuth, AngularFireAuthModule} from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import {Component} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Component({
   selector: 'app-inscription',
@@ -21,6 +22,7 @@ export class InscriptionPage {
       public afDB: AngularFireDatabase,
       public  afAuth: AngularFireAuth,
   ) {}
+
 
   InscriptionForm: FormGroup;
   nom: string;
