@@ -1,26 +1,34 @@
+import { AngularFireModule } from '@angular/fire';
+import {AngularFireDatabase, AngularFireDatabaseModule} from '@angular/fire/database';
+import {AngularFireAuth, AngularFireAuthModule} from '@angular/fire/auth';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import {Component} from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-inscription',
   templateUrl: './inscription.page.html',
   styleUrls: ['./inscription.page.scss'],
 })
-export class InscriptionPage implements OnInit {
-
+export class InscriptionPage {
+  dataUser = {
+    adresse: '',
+    ville: ''
+  };
 // connection de BDD
   constructor(
       public formBuilder: FormBuilder,
-      public afDB: AngularFireDatabase
-  ) {
-  }
+      public afDB: AngularFireDatabase,
+      public  afAuth: AngularFireAuth,
+  ) {}
+
 
   InscriptionForm: FormGroup;
   nom: string;
   prenom: string;
-  email: any;
-  password: any;
+  adresse: any;
+  ville: any;
 
   errorMessages = {
     nom: [
@@ -35,24 +43,19 @@ export class InscriptionPage implements OnInit {
       {type: 'maxlength', message: 'Le prenom doit être composer par 20 caracteres maximum!'},
       {type: 'pattern', message: 'Veillez entrer le prenom valide!'},
     ],
-    email: [
-      {type: 'required', message: 'Email est obligatoire!'},
-      {type: 'minlength', message: 'Email doit être composer par 6 caracteres minimum!'},
-      {type: 'maxlength', message: 'Email doit être composer par moins de 50 caracteres!'},
+    adresse: [
+      {type: 'required', message: 'adresse est obligatoire!'},
+      {type: 'minlength', message: 'adresse doit être composer par 6 caracteres minimum!'},
+      {type: 'maxlength', message: 'adresse doit être composer par moins de 50 caracteres!'},
       {type: 'pattern', message: 'Veillez entrer adresse valide!'},
     ],
-    emailConf: [
-      {type: 'required', message: 'Les mails saisis ne sont pas les mêmes!'},
-    ],
-    password: [
-      {type: 'required', message: 'Mot de passe est obligatoire!'},
-      {type: 'minlength', message: 'Mot de passe doit être composer par 6 caracteres minimum!'},
-      {type: 'maxlength', message: 'Mot de passe doit être composer par moins de 50 caracteres!'},
-      {type: 'pattern', message: 'Veillez entrer un mot de passe valide!'},
-    ],
-    passwordConf: [
-      {type: 'required', message: 'Les monts de passes saisis ne sont pas les mêmes!'},
-    ],
+
+    ville: [
+      {type: 'required', message: 'Ville est obligatoire!'},
+      {type: 'minlength', message: 'Ville doit être composer par 6 caracteres minimum!'},
+      {type: 'maxlength', message: 'Ville doit être composer par moins de 50 caracteres!'},
+      {type: 'pattern', message: 'Veillez entrer un Ville valide!'},
+    ]
   };
 
   inscriptionForm = this.formBuilder.group({
@@ -66,25 +69,16 @@ export class InscriptionPage implements OnInit {
       Validators.minLength(2),
       Validators.maxLength(20),
     ])),
-    email: new FormControl('', Validators.compose([
+    adresse: new FormControl('', Validators.compose([
       Validators.required,
       Validators.minLength(6),
       Validators.maxLength(50),
-      Validators.pattern('\\w+@\\w+\\..{2,3}(.{2,3})?$')
+      /*
+            Validators.pattern('\\w+@\\w+\\..{2,3}(.{2,3})?$')
+            */
     ])),
-    emailConf: new FormControl('', Validators.compose([
-      Validators.required,
-      Validators.minLength(6),
-      Validators.maxLength(50),
-      Validators.pattern('\\w+@\\w+\\..{2,3}(.{2,3})?$')
-    ])),
-    password: new FormControl('', Validators.compose([
-      Validators.required,
-      Validators.minLength(6),
-      Validators.maxLength(30),
-      // Validators.pattern('/^[A-Za-z]\\w{7,14}$/')
-    ])),
-    passwordConf: new FormControl('', Validators.compose([
+
+    ville: new FormControl('', Validators.compose([
       Validators.required,
       Validators.minLength(6),
       Validators.maxLength(30),
@@ -93,17 +87,14 @@ export class InscriptionPage implements OnInit {
   });
 
 
-add() {
-      this.afDB.list('NewPatient/').push({
-          nom : this.nom,
-          prenom : this.prenom,
-          email : this.email,
-          password : this.password,
-          // age: parseInt(value.age)
-        });
-
-    }
-  ngOnInit(): void {}
+  add() {
+    this.afDB.list('NewPatient/').push({
+      nom: this.nom,
+      prenom: this.prenom,
+      adresse: this.adresse,
+      ville: this.ville
+      // age: parseInt(value.age)
+    });
+  }
 
 }
-

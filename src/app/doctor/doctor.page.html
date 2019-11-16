@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>doctor</ion-title>
+    <ion-title>DOCTOR</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -16,30 +16,30 @@
         <ion-list>
           <ion-item>
             <ion-icon name="home" slot="start"></ion-icon>
-            <ion-label>Acceuil</ion-label>
+            <ion-button href="login2"color="light"> Acceuil </ion-button>
           </ion-item>
           <ion-item>
             <ion-icon name="person" slot="start"></ion-icon>
-            <ion-label>Profil</ion-label>
+            <ion-label> <ion-button href="home"color="light"> Profil </ion-button></ion-label>
           </ion-item>
           <ion-item>
             <ion-icon name="chatbubbles" slot="start"></ion-icon>
- firebase
+            <ion-label><ion-button href="home"color="light">Notifications </ion-button></ion-label>
             <ion-label>Notifications</ion-label>
             <ion-label>Notification</ion-label>
- master
+
           </ion-item>
           <ion-item>
             <ion-icon name="hourglass"></ion-icon>
-            <ion-label>Rendez-Vous Planifiés</ion-label>
+            <ion-label><ion-button href="home"color="light"> Rendez-Vous Planifiés </ion-button></ion-label>
           </ion-item>
           <ion-item>
             <ion-icon name="time"></ion-icon>
-            <ion-label>Mes disponibilités</ion-label>
+            <ion-label><ion-button href="calendar"color="light"> Mes disponibilités </ion-button></ion-label>
           </ion-item>
           <ion-item>
             <ion-icon name="log-out"></ion-icon>
-            <ion-label>Se déconnecter</ion-label>
+            <ion-label><ion-button (click)="logout()" href="home" color="danger"> Se déconnecter </ion-button></ion-label>
           </ion-item>
         </ion-list>
       </ion-content>
